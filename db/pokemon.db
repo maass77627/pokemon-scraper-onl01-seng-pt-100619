@@ -10,7 +10,7 @@ def initialize(id:, name:, type:, db:)
 end 
 
 def self.save(name, type, db)
-Pokemon.new 
+  db.execute(INSERT INTO pokemon 
 
 
 end 
