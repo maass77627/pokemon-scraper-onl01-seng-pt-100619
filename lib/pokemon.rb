@@ -12,13 +12,7 @@ def initialize(id:, name:, type:, db:)
 end 
 
 def self.save(name, type, db)
-  sql = <<-SQL 
-  INSERT INTO pokemons (name, type)
-  VALUES (?,?)
-  SQL
-  
-  db.execute(sql, self.name, self.type)
-  @id = db.execute("SELECT last_insert_rowid() FROM pokemons")[0][0]
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?);", name, type)
 end 
 
 
