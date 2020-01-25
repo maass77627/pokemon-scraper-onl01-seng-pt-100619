@@ -17,7 +17,7 @@ end
 
 
 def self.find(id) 
-found_pokemon =  db.execute("SELECT * FROM pokemons WHERE id = ?")
+found_pokemon = db.execute("SELECT * FROM pokemons WHERE id = ?")
   result = db.execute(sql,id)[0]
   Pokemon.new(result[0], result[1], result[2])
 end 
